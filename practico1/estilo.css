@@ -1,5 +1,5 @@
 body {
-    background-image: url(background1.jpg);
+    background-image: url(background1.jpg); /*aplico imagen de fondo a todo el body*/
     font-family: tahoma, sans-serif;/*estilo de fuente para todo el body*/
     text-align: center; /*controla la alineación de texto en el eje vertical*/
 }

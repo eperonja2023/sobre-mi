@@ -6,11 +6,12 @@ function calcular() {
     // validación de los operandos
     if (isNaN(num1) || isNaN(num2)) {
         alert("solo se admiten valores numéricos");
+        return;
     }
 
     if (operando == "division" && num2 == 0) {
         alert("NO SE PUEDE DIVIDIR POR CERO");
-
+        return;
     }
 
     // cálculo de las operaciones + resultado en display
@@ -30,8 +31,8 @@ function calcular() {
             break;
         default:
             alert("Se deben completar los 3 campos");
+            return;
     }
-
     document.getElementById("resultado").innerHTML = resultado;
 }
 
