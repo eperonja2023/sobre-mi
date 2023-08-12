@@ -1,70 +1,41 @@
 body {
     background-image: url(background1.jpg);
+    font-family: tahoma, sans-serif;/*estilo de fuente para todo el body*/
+    text-align: center; /*controla la alineación de texto en el eje vertical*/
 }
 
 .area-de-trabajo {
-    background-color: rgb(25, 105, 15);
-    height: 50vh;
-    margin: 10%;
+    background-color: rgb(25, 105, 15); /*color de fondo*/
+    height: 50vh; /*altura del área= 50% de la altura de la pantalla*/
+    margin: 10%; /*margen= 10% respecto al ancho del contenedor*/
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
+    display: flex; /*area adaptable a distintos tamaños*/
+    flex-direction: column; /*eje de alineacion vertical*/
+    border-radius: 20px; /*redondeo de esquinas con un radio de 15 px*/
 }
 
 h1 {
-    justify-content: center;
-    align-items: center;
-    font-family: tahoma, sans-serif;
-    color: rgb(233, 212, 184);
-    font-size: 300%;
-}
-
-
-
-.encabezado {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-family: tahoma, sans-serif;
-}
-
-.calculadora {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-input, text {
-    font-family: tahoma, sans-serif;
+    color: rgb(233, 212, 184); /*color de fuente*/
+    font-size:330%; /*tamaño de fuente (300% del tamaño inicial)*/
 }
 
 button {
-    background-color: rgb(51, 51, 221);
-    color: rgb(233, 212, 184);
-    cursor: pointer;
+    background-color: rgb(51, 51, 221); /*color de fondo del boton*/
+    color: rgb(233, 212, 184); /*color de texto del boton*/
+    cursor: pointer; /*cambio de formato del cursor al pasar por el boton*/
+    border-radius: 5px; /*redondeo de esquinas con un radio de 5 px*/
 }
 
 button:hover{
-    scale: 1.1;
+    scale: 1.1; /*el boton incrementa su tamaño un 10% al pasar el cursor*/
 }
 
 input {
-    border-radius: 5px;
+    border-radius: 5px; /*redondeo de esquinas con un radio de 5 px*/
+    height: 20px; /*aumento la altura de los campos de input*/
 }
 
 p {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-family: tahoma, sans-serif;
-    color: black;
-
-    height: 10%;
-    background-color: blanchedalmond;
-    padding-left: 2%;
-    padding-right:  2%;
-    border-radius: 8px;
+    color: black; /*color de texto*/
+    line-height: 5px; /*ajusto el interlineado entre párrafos*/
 }
