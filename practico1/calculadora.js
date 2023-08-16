@@ -1,12 +1,11 @@
 function calcular() {
-    console.log('Corriendo funcion "calcular"');
+    console.log('Corriendo funcion "calcular"'); //verifica en consola que el programa corre
 
     let num1 = document.getElementById("valor1").value;
     let num2 = document.getElementById("valor2").value;
     let operando = document.getElementById("operando").value;
 
 // validación de los operandos
-    //  ^[+-]?[0-9]+([.][0-9]+)?$
     // /^[+-]?[0-9]+([.][0-9]+)?$/
 
     let exprRegulNumero = /^[+-]?[0-9]+([.][0-9]+)?$/;

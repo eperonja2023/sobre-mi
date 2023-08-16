@@ -17,3 +17,26 @@ Para obtener una copia del proyecto en funcionamiento en la máquina local para 
 * Ó desde Internet usando cualquier navegador desde este enlace:  [Calculadora](https://eperonja2023.github.io/sobre-mi/practico1)
 ___
 ## Ejecutando las pruebas
+
+
+| Operacion   | Res. esperado | Res. obtenido  |
+|:-----------:|:-------------:|:---------------:|
+|**SUMA** |
+| 1+1    | 2 | 2 |
+| 0+1    | 1 | 1 |
+| 1+0    | 1 | 1 |
+| 0+0    | 0 | 0 |
+|**RESTA**|
+|1-1     |0 |0 |
+|0-1     |-1|-1|
+|1-0     |1 |1 |
+|0-0     |0 |0 |
+|**MULTIPLICACION**|
+|1*1     |1 |1 |
+|0*1     |0 |0 |
+|1*0     |0 |0 |
+|**DIVISION**|
+|1/1     |1 |1 |
+|0/1     |0 |0 |
+|1/0     |MSJ "no valido"|MSJ "no valido"|
+|**CARACTERES NO NUMERICOS**|MSJ "solo numeros"|MSJ "solo numeros"|
