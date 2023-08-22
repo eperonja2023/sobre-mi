@@ -1,0 +1,117 @@
+body {
+    background-image: url(/images/fondo.png);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 5%;
+}
+
+header {
+    display: block;
+    flex-direction: row;
+    text-align: center;
+    justify-items: center;
+    background-color: black;
+    font-size: 130%;
+}
+
+.botonera{
+    display:block;
+    flex-direction: column;
+    padding-bottom: 4vh;
+    background-color: black;
+    padding-bottom: 1vh;
+}
+
+
+h1 {
+    font-family:'Gill Sans', sans-serif;
+    color:yellow;
+    display: flex;
+    flex-direction: column;
+    text-justify: center;
+    text-align: center;
+}
+
+h3 {
+    font-family:'Gill Sans', sans-serif;
+    color: white
+}
+
+
+button {
+    /* margin-top: 60px; */
+    width: 20%;
+    background-color: white;
+    text-align: center;
+    border-style:hidden;
+    cursor: pointer;
+}
+
+
+button:hover {
+    scale: 1.1;
+    background-color:rgb(26, 26, 241);
+    color:white;
+    
+}
+
+#barra {
+    /* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_progressbar_label_js */
+        width: 60% ;
+        height: 6px;
+        background-color: grey;
+        color: white;
+        margin-left: 20%;
+      }
+
+.area-juego {
+    display:block;
+    flex-direction: row;
+    display: flex;
+    background-color: black;
+    justify-content:space-between;
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-bottom: 15%;
+    font-size: 200%;
+}
+
+p {
+    color:red
+}
+
+#competidores {
+    width: 30%;
+    text-align: center;
+    text-justify: center;
+    font-family: sans-serif;
+}
+
+
+
+ /* .piedra {
+    background-image: url(/images/piedra.PNG);
+    height: 60px;
+    width: 60px;
+    background-size: contain;
+    margin-top: 60px;
+}
+
+.papel {
+    background-image: url(/images/papel.PNG);
+    height: 60px;
+    width: 60px;
+    background-size: contain;
+    margin-top: 60px;
+
+}
+
+.tijera {
+    background-image: url(/images/tijera.PNG);
+    height: 60px;
+    width: 60px;
+    background-size: contain;
+    margin-top: 60px;
+}  */
