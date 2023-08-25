@@ -1,10 +1,11 @@
 body {
-    background-image: url(/images/fondo.png);
+    /* background-image: url(/images/fondo.png); */
+    background-color:rgba(165, 42, 42, 0.822);
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    padding: 5%;
+    padding: 1%;
 }
 
 header {
@@ -12,49 +13,50 @@ header {
     flex-direction: row;
     text-align: center;
     justify-items: center;
-    background-color: black;
-    font-size: 130%;
+    background-color:beige;
+    border-radius: 32px 32px 0 0;
 }
 
 .botonera{
-    display:block;
+    display:block;  
     flex-direction: column;
     padding-bottom: 4vh;
     background-color: black;
     padding-bottom: 1vh;
+    border-radius: 0 0 35px 35px;
 }
 
 
 h1 {
-    font-family:'Gill Sans', sans-serif;
-    color:yellow;
+    font-family:'Courier New';
+    font-size: 200%;
+    color:black;
     display: flex;
     flex-direction: column;
     text-justify: center;
     text-align: center;
+    font-weight: bold;
 }
+
+
+.reglamento {
+    background-color: black;
+}
+
 
 h3 {
-    font-family:'Gill Sans', sans-serif;
-    color: white
+    font-family:'Courier New';
+    color: white;
 }
 
-
-button {
-    /* margin-top: 60px; */
-    width: 20%;
-    background-color: white;
-    text-align: center;
-    border-style:hidden;
-    cursor: pointer;
+h4 {
+    font-family:'Courier New';
+    color: white;
+    font-size: small;
 }
-
 
 button:hover {
     scale: 1.1;
-    background-color:rgb(26, 26, 241);
-    color:white;
-    
 }
 
 #barra {
@@ -67,51 +69,79 @@ button:hover {
       }
 
 .area-juego {
-    display:block;
     flex-direction: row;
     display: flex;
     background-color: black;
     justify-content:space-between;
-    padding-left: 20%;
-    padding-right: 20%;
-    padding-bottom: 15%;
-    font-size: 200%;
+    align-items: center;
+    padding-left: 10%;
+    padding-right: 10%;
+
 }
 
 p {
-    color:red
+    color:red;
+    margin: 10%;
+    background-color: beige;
+    font-size: 22px;
+    font-weight: 900;
 }
 
-#competidores {
-    width: 30%;
+
+#jugadores {
+    width: 150px;
+    height: 90px;
+    background-color:beige;
     text-align: center;
     text-justify: center;
-    font-family: sans-serif;
+    font-family:'Courier New';  
+    border-radius: 1rem;
 }
 
+img.jugada {
+    display: flex;
+    width: 190px;
+    height: 190px;
+    padding: 2%;
+    border-radius: 50%;
+}
 
+button {
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    text-align: center;
+    border-style:hidden;
+    cursor: pointer;
+}
 
- /* .piedra {
+ #piedra {
     background-image: url(/images/piedra.PNG);
-    height: 60px;
-    width: 60px;
+    height: 40px;
+    width: 40px;
     background-size: contain;
     margin-top: 60px;
+    border-radius: 50%;
 }
 
-.papel {
+#papel {
     background-image: url(/images/papel.PNG);
-    height: 60px;
-    width: 60px;
+    height: 40px;
+    width: 40px;
     background-size: contain;
     margin-top: 60px;
-
+    border-radius: 50%;
 }
 
-.tijera {
+#tijera {
     background-image: url(/images/tijera.PNG);
-    height: 60px;
-    width: 60px;
+    height: 40px;
+    width: 40px;
     background-size: contain;
     margin-top: 60px;
-}  */
+    border-radius: 50%;
+}
+
+.disabled {
+    display: none;
+}
