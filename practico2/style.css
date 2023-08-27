@@ -17,16 +17,6 @@ header {
     border-radius: 32px 32px 0 0;
 }
 
-.botonera{
-    display:block;  
-    flex-direction: column;
-    padding-bottom: 4vh;
-    background-color: black;
-    padding-bottom: 1vh;
-    border-radius: 0 0 35px 35px;
-}
-
-
 h1 {
     font-family:'Courier New';
     font-size: 200%;
@@ -36,13 +26,18 @@ h1 {
     text-justify: center;
     text-align: center;
     font-weight: bold;
+    margin: 2px;
+    padding: 2px;
 }
-
 
 .reglamento {
     background-color: black;
 }
 
+h2 {
+    font-family:'Courier New';
+    color: yellow;
+}
 
 h3 {
     font-family:'Courier New';
@@ -55,16 +50,11 @@ h4 {
     font-size: small;
 }
 
-button:hover {
-    scale: 1.1;
-}
-
 #barra {
     /* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_progressbar_label_js */
         width: 60% ;
         height: 6px;
         background-color: grey;
-        color: white;
         margin-left: 20%;
       }
 
@@ -87,10 +77,20 @@ p {
     font-weight: 900;
 }
 
+#resultado-ronda {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+#result-ronda {
+    margin: 0;
+    padding: 0;
+}
 
 #jugadores {
     width: 150px;
-    height: 90px;
+    height: 80px;
     background-color:beige;
     text-align: center;
     text-justify: center;
@@ -98,24 +98,39 @@ p {
     border-radius: 1rem;
 }
 
-img.jugada {
+img.jugada-player,
+img.jugada-pc {
     display: flex;
-    width: 190px;
-    height: 190px;
+    width: 170px;
+    height: 170px;
     padding: 2%;
     border-radius: 50%;
 }
 
-button {
+/* button {
     width: 30px;
     height: 30px;
     background-color: black;
     text-align: center;
     border-style:hidden;
     cursor: pointer;
+} */
+
+
+.botonera{
+    display:block;  
+    flex-direction: column;
+    padding-bottom: 4vh;
+    background-color: black;
+    padding-bottom: 1vh;
+    border-radius: 0 0 35px 35px;
 }
 
- #piedra {
+button:hover {
+    scale: 1.1;
+}
+
+ #btn-piedra {
     background-image: url(/images/piedra.PNG);
     height: 40px;
     width: 40px;
@@ -124,7 +139,7 @@ button {
     border-radius: 50%;
 }
 
-#papel {
+#btn-papel {
     background-image: url(/images/papel.PNG);
     height: 40px;
     width: 40px;
@@ -133,7 +148,7 @@ button {
     border-radius: 50%;
 }
 
-#tijera {
+#btn-tijera {
     background-image: url(/images/tijera.PNG);
     height: 40px;
     width: 40px;

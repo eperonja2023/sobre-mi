@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-
+    <!-- https://eperonja2023.github.io/sobre-mi/ -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,17 +18,18 @@
 
     <div class="reglamento">
         <h4 id="reglas">Modo: Gana el mejor de 5 rondas</h4>
+        <h2 id="nro-de-ronda">RONDA</h2>
     </div>
 
     <div class="area-juego">
-
+    
         <div id="jugadores">
             <p id="player">JUGADOR</p>
             <P id="marcador-player">0</P>
         </div>
-
-        <img class="jugada player" src="/images/cerebro2.png">
-        <img class="jugada pc" src="/images/pc.jpg">
+    
+            <img class="jugada-player" src="/images/cerebro2.png">
+            <img class="jugada-pc" src="/images/pc.jpg">
 
         <div id="jugadores">
             <p>PC</p>
@@ -36,19 +37,22 @@
         </div>
     </div>
 
+    <div id="resultado-ronda">
+        <h2 id="result-ronda" style="color: red; font-weight: bolder;">RESULTADO RONDA</h2>
+    </div>
 
     <div class="botonera">
 
-        <button class= "eleccion" id="piedra"></button>
-        <button class= "eleccion" id="papel"></button>
-        <button class= "eleccion" id="tijera"></button>
+        <button class= "eleccion" id="btn-piedra"></button>
+        <button class= "eleccion" id="btn-papel"></button>
+        <button class= "eleccion" id="btn-tijera"></button>
 
-        <h3>ELIGE TU OPCION</h3>
-
-        <!-- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_progressbar_label_js -->
-        <div id="progreso">
-            <div id="barra"></div>
+        <div id="aviso-elige-tu-opcion">
+            <h3>ELIGE TU OPCION</h3>
         </div>
+        
+        <!-- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_progressbar_label_js -->
+            <div id="barra"></div>
 
     </div>
 
