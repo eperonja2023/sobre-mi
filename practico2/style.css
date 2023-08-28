@@ -1,5 +1,4 @@
 body {
-    /* background-image: url(/images/fondo.png); */
     background-color:rgba(165, 42, 42, 0.822);
     display: flex;
     flex-direction: column;
@@ -26,8 +25,8 @@ h1 {
     text-justify: center;
     text-align: center;
     font-weight: bold;
-    margin: 2px;
-    padding: 2px;
+    margin: 4px;
+    padding: 3px;
 }
 
 .reglamento {
@@ -50,13 +49,6 @@ h4 {
     font-size: small;
 }
 
-#barra {
-    /* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_progressbar_label_js */
-        width: 60% ;
-        height: 6px;
-        background-color: grey;
-        margin-left: 20%;
-      }
 
 .area-juego {
     flex-direction: row;
@@ -66,7 +58,6 @@ h4 {
     align-items: center;
     padding-left: 10%;
     padding-right: 10%;
-
 }
 
 p {
@@ -83,6 +74,51 @@ p {
     background-color: black;
 }
 
+#area-perdiste {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    display: none;
+}
+
+#area-ganaste {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    display: none;
+}
+
+.ganaste {
+    font-family:'Courier New';
+    color: green;
+    background-color: black;
+    font-size: 350%;
+    margin-top: 10px;
+    margin-bottom: 37px;
+}
+
+.perdiste {
+    font-family:'Courier New';
+    color: red;
+    background-color: black;
+    font-size: 350%;
+    margin-top: 10px;
+    margin-bottom: 37px;
+}
+
+#area-reiniciar {
+    margin: 0;
+    padding: 0;
+    color: beige;
+    background-color: black;
+    border-radius: 0 0 35px 35px;
+    display: none; 
+}
+
+#nro-de-ronda {
+    margin-bottom: 0;
+}
+
 #result-ronda {
     margin: 0;
     padding: 0;
@@ -90,7 +126,7 @@ p {
 
 #jugadores {
     width: 150px;
-    height: 80px;
+    height: 90px;
     background-color:beige;
     text-align: center;
     text-justify: center;
@@ -103,26 +139,27 @@ img.jugada-pc {
     display: flex;
     width: 170px;
     height: 170px;
-    padding: 2%;
+    padding-top: 8%;
     border-radius: 50%;
 }
 
-/* button {
-    width: 30px;
-    height: 30px;
-    background-color: black;
+.button {
+    width: 90px;
+    height: 40px;
+    background-color: rgb(36, 36, 114);
+    color: beige;
     text-align: center;
     border-style:hidden;
     cursor: pointer;
-} */
-
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
 
 .botonera{
-    display:block;  
+
     flex-direction: column;
     padding-bottom: 4vh;
     background-color: black;
-    padding-bottom: 1vh;
     border-radius: 0 0 35px 35px;
 }
 
@@ -155,8 +192,4 @@ button:hover {
     background-size: contain;
     margin-top: 60px;
     border-radius: 50%;
-}
-
-.disabled {
-    display: none;
 }

@@ -6,23 +6,33 @@ let ronda = document.getElementById("nro-de-ronda")
 let nombrePlayer = document.getElementById("player");
 let marcadorPlayer = document.getElementById("marcador-player");
 let marcadorPc = document.getElementById("marcador-pc");
-let ataquePlayer = document.getElementById("jugada-plyer");
-let ataquePc = document.getElementById("jugada-pc");
+let ataquePlayer = document.getElementById("img-jugada-player");
+let ataquePc = document.getElementById("img-jugada-pc");
+let contenedorResultadoFinal = document.getElementById("resultado-final");
 let resultadoRonda = document.getElementById("result-ronda");
 let botonPiedra = document.getElementById("btn-piedra");
 let botonPapel = document.getElementById("btn-papel");
 let botonTijera = document.getElementById("btn-tijera");
+let perdiste = document.getElementById("perdiste");
+let ganaste = document.getElementById("ganaste");
+let botonReiniciar = document.getElementById("btn-reiniciar");
 // let barraProgreso = document.querySelector("#barra");
+
+
 
 // importo las areas de juego sobre las que voy a operar
 let areaReglamento = document.getElementsByClassName("reglamento");
 let areaJuego = document.getElementById("area-juego");
 let areaResultadoRonda = document.getElementById("resultado-ronda");
+let areaGanaste = document.getElementById("area-ganaste");
+let areaPerdiste = document.getElementById("area-perdiste");
 let areaBotonera = document.querySelector(".botonera");
+let areaReiniciar = document.getElementById("area-reiniciar");
+
+
 
 
 // defino variables a usar
-
 var eleccionPlayer;
 var eleccionPc;
 
@@ -35,27 +45,24 @@ var puntosPc = 0;
 var nroRonda = 0;
 
 
-    // marcadorPlayer.innerText= 1;
-
 
 // solicito y valido nombre jugador (NO esp.vacío, NO punto, NO saltear con Aceptar o Cancelar)
-function cargarNombre(){
-let nombre = prompt("Ingresa tu nombre para comenzar a jugar")
-while (nombre == " " || nombre == "." || !nombre) {
-  nombre = prompt("UPS !!...Ingresa un nombre válido");
-}
 // paso nombre a mayusculas y lo seteo en el marcador
+function cargarNombre(){
+let nombre = prompt("INGRESA TU NOMBRE O ALIAS PARA COMENZAR A JUGAR             (hasta 9 caracteres)")
+while (nombre == " " || nombre == "." || !nombre || nombre.length > 9) {
+  nombre = prompt("UPS !!...Ingresa un nombre válido (hasta 9 caracteres)");
+}
 nombre = nombre.toUpperCase();
 nombrePlayer.innerHTML = nombre;
-// jugar();
 }
 
 
-// Programo el inicio del turno con la seleccion de una opcion del jugador y
+// Programo el inicio de los turnos con la seleccion de una opcion del jugador y
 // llamo a la funcion que define la jugada de la pc
 function actualizarRonda() {
   if (nroRonda===0) {
-    ronda.innerHTML = "RONDA ";
+    ronda.innerHTML = "RONDA 1";
   } else { 
     ronda.innerHTML = "RONDA " + (nroRonda);
   }
@@ -77,7 +84,7 @@ function actualizarRonda() {
     console.log(eleccionPlayer)
     juegaPc();
   })
-  //console.log(eleccionPlayer)
+
 
 
 
@@ -86,10 +93,32 @@ function juegaPc() {
   let valores = { 0: 'piedra', 1: 'papel', 2: 'tijera' };
   eleccionPc = valores[Math.floor(Math.random() * 3)];
   console.log("pc" + eleccionPc);
-  determinarGanador(eleccionPlayer, eleccionPc);
-  //console.log(jugadaComputador)
+  imagenesJugada(eleccionPlayer, eleccionPc);
 }
  
+function imagenesJugada(ePlayer, ePc) {
+ if (ePlayer == "piedra") {
+  ataquePlayer.innerHTML = '<img class="jugada-player" src="/images/piedra.png">';
+ } else if (ePlayer == "papel") {
+  ataquePlayer.innerHTML = '<img class="jugada-player" src="/images/papel.png">';
+ } else {
+  ataquePlayer.innerHTML = '<img class="jugada-player" src="/images/tijera.png">';
+ }
+ console.log('imagenPlayer');
+
+ if (ePc == "piedra") {
+  ataquePc.innerHTML = '<img class="jugada-pc" src="/images/piedra.png">';
+ } else if (ePc == "papel") {
+  ataquePc.innerHTML = '<img class="jugada-pc" src="/images/papel.png">';
+ } else {
+  ataquePc.innerHTML = '<img class="jugada-pc" src="/images/tijera.png">';
+ }
+determinarGanador(eleccionPlayer, eleccionPc);
+console.log('imagenPc');
+}
+
+
+
 // determino ganador y paso reultados 
 function determinarGanador(ePlayer, ePc) {
   if (ePc === ePlayer) {
@@ -99,91 +128,70 @@ function determinarGanador(ePlayer, ePc) {
   } else {
     resultadoGanaste()
   }
-
   actualizarRonda();
 
-  if (nroRonda >= 5) {
-    resultadoFinal();
+  if (puntosPc==3) {
+    ganoPc();
+  } else if (puntosPlayer==3) {
+    ganoPlayer();
   }
 }
 
 // defino las acciones segun el resultado
 function resultadoEmpate(){
-  resultadoRonda.innerHTML = "EMPATE !!!";
+  resultadoRonda.innerHTML = "Empate !!!";
+  resultadoRonda.style.color = "red";
 }
 
 function resultadoPerdiste(){
-  resultadoRonda.innerHTML = "PERDISTE";
+  resultadoRonda.innerHTML = "Perdiste la ronda";
+  resultadoRonda.style.color = "red";
   puntosPc += 1;
   nroRonda += 1;
   marcadorPc.innerHTML = puntosPc;
 }
 
 function resultadoGanaste(){
-  resultadoRonda.innerHTML = "GANASTE";
+  resultadoRonda.innerHTML = "Ganaste la ronda";
+  resultadoRonda.style.color = "red";
   puntosPlayer += 1;
   nroRonda += 1;
   marcadorPlayer.innerHTML = puntosPlayer;
 }
 
-function resultadoFinal(){
+function ganoPc() {
   areaBotonera.style.display = "none";
-  resultadoRonda.innerHTML = "FIN DEL JUEGO";
+  reglas.style.color = "black";
+  areaPerdiste.style.display = "block";
+  areaReiniciar.style.display = "block";
 }
 
+function ganoPlayer() {
+  areaBotonera.style.display = "none";
+  reglas.style.color = "black";
+  areaGanaste.style.display = "block";
+  areaReiniciar.style.display = "block";
+}
+
+function reiniciar() {
+  puntosPlayer = 0;
+  puntosPc = 0;
+  nroRonda = 0;
+  areaBotonera.style.display = "block";
+  reglas.style.color = "white";
+  areaGanaste.style.display = "none";
+  areaPerdiste.style.display = "none";
+  areaReiniciar.style.display = "none";
+  ronda.innerHTML = "LISTO PARA EMPEZAR !!!";
+  resultadoRonda.innerHTML = ".";
+  resultadoRonda.style.color = "black";
+  marcadorPlayer.innerHTML = "0";
+  marcadorPc.innerHTML = "0";
+  ataquePlayer.innerHTML = '<img class="jugada-player" src="/images/cerebro2.png">';
+  ataquePc.innerHTML = '<img class="jugada-pc" src="/images/pc.jpg">';
+  actualizarRonda();
+}
+
+
 window.addEventListener("load", cargarNombre);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//barra
-//https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_progressbar_label_js
-// var i = 0;
-// function move() {
-//   if (i == 0) {
-//     i = 1;
-//     var elem = document.getElementById("myBar");
-//     var width = 10;
-//     var id = setInterval(frame, 10);
-//     function frame() {
-//       if (width >= 100) {
-//         clearInterval(id);
-//         i = 0;
-
-//       } else {
-//         width++;
-//         elem.style.width = width + "%";
-//         elem.innerHTML = width  + "%";
-//       }
-//     }
-//   }
-// }
+botonReiniciar.addEventListener("click", reiniciar);
