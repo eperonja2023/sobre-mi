@@ -3,13 +3,13 @@
 // Importo del HTML las variables sobre las que voy a operar
 let reglas = document.getElementById("reglas");
 let ronda = document.getElementById("nro-de-ronda")
+let resultadoRonda = document.getElementById("result-ronda");
 let nombrePlayer = document.getElementById("player");
 let marcadorPlayer = document.getElementById("marcador-player");
 let marcadorPc = document.getElementById("marcador-pc");
 let ataquePlayer = document.getElementById("img-jugada-player");
 let ataquePc = document.getElementById("img-jugada-pc");
 let contenedorResultadoFinal = document.getElementById("resultado-final");
-let resultadoRonda = document.getElementById("result-ronda");
 let botonPiedra = document.getElementById("btn-piedra");
 let botonPapel = document.getElementById("btn-papel");
 let botonTijera = document.getElementById("btn-tijera");
@@ -61,6 +61,8 @@ nombrePlayer.innerHTML = nombre;
 // Programo el inicio de los turnos con la seleccion de una opcion del jugador y
 // llamo a la funcion que define la jugada de la pc
 function actualizarRonda() {
+  resultadoRonda.style.color="red";
+  
   if (nroRonda===0) {
     ronda.innerHTML = "RONDA 1";
   } else { 
@@ -119,8 +121,9 @@ console.log('imagenPc');
 
 
 
-// determino ganador y paso reultados 
+// determino ganador y reultados 
 function determinarGanador(ePlayer, ePc) {
+  //determino ganador de la ronda y paso a resultados de ronda
   if (ePc === ePlayer) {
     resultadoEmpate();
   } else if (ePc == 'piedra' && ePlayer == 'tijera' || ePc == 'papel' && ePlayer == 'piedra' || ePc == 'tijera' && ePlayer == 'papel') {
@@ -129,7 +132,7 @@ function determinarGanador(ePlayer, ePc) {
     resultadoGanaste()
   }
   actualizarRonda();
-
+// determino ganador de partida y paso a resultado de partida
   if (puntosPc==3) {
     ganoPc();
   } else if (puntosPlayer==3) {
@@ -137,7 +140,7 @@ function determinarGanador(ePlayer, ePc) {
   }
 }
 
-// defino las acciones segun el resultado
+// defino las acciones segun el resultado de las rondas
 function resultadoEmpate(){
   resultadoRonda.innerHTML = "Empate !!!";
   resultadoRonda.style.color = "red";
@@ -149,6 +152,7 @@ function resultadoPerdiste(){
   puntosPc += 1;
   nroRonda += 1;
   marcadorPc.innerHTML = puntosPc;
+
 }
 
 function resultadoGanaste(){
@@ -157,8 +161,10 @@ function resultadoGanaste(){
   puntosPlayer += 1;
   nroRonda += 1;
   marcadorPlayer.innerHTML = puntosPlayer;
+  
 }
 
+// defino las acciones segun el resultado de la partida
 function ganoPc() {
   areaBotonera.style.display = "none";
   reglas.style.color = "black";
@@ -173,6 +179,7 @@ function ganoPlayer() {
   areaReiniciar.style.display = "block";
 }
 
+// defino acciones del boton de inicio para reiniciar una nueva partida
 function reiniciar() {
   puntosPlayer = 0;
   puntosPc = 0;
@@ -183,12 +190,13 @@ function reiniciar() {
   areaPerdiste.style.display = "none";
   areaReiniciar.style.display = "none";
   ronda.innerHTML = "LISTO PARA EMPEZAR !!!";
-  resultadoRonda.innerHTML = ".";
+  resultadoRonda.innerHTML = "nueva partida";
   resultadoRonda.style.color = "black";
   marcadorPlayer.innerHTML = "0";
   marcadorPc.innerHTML = "0";
   ataquePlayer.innerHTML = '<img class="jugada-player" src="/images/cerebro2.png">';
   ataquePc.innerHTML = '<img class="jugada-pc" src="/images/pc.jpg">';
+  console.log("reinicio");
   actualizarRonda();
 }
 
