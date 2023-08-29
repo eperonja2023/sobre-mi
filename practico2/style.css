@@ -172,7 +172,7 @@ button:hover {
     height: 40px;
     width: 40px;
     background-size: contain;
-    margin-top: 60px;
+    margin-top: 15px;
     border-radius: 50%;
 }
 
@@ -181,7 +181,7 @@ button:hover {
     height: 40px;
     width: 40px;
     background-size: contain;
-    margin-top: 60px;
+    margin-top: 15px;
     border-radius: 50%;
 }
 
@@ -190,6 +190,21 @@ button:hover {
     height: 40px;
     width: 40px;
     background-size: contain;
-    margin-top: 60px;
+    margin-top: 15px;
     border-radius: 50%;
+}
+
+
+#progreso {
+    display: flex;
+
+}
+
+#barra {
+    /* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_progressbar_label_js */
+    margin-top: 4%;
+    width: 60%;
+    height: 4px;
+    background-color: grey;
+    margin-left: 20%;
 }

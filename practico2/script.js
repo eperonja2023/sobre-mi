@@ -16,7 +16,7 @@ let botonTijera = document.getElementById("btn-tijera");
 let perdiste = document.getElementById("perdiste");
 let ganaste = document.getElementById("ganaste");
 let botonReiniciar = document.getElementById("btn-reiniciar");
-// let barraProgreso = document.querySelector("#barra");
+let barraProgreso = document.querySelector("#barra");
 
 
 
@@ -62,32 +62,36 @@ nombrePlayer.innerHTML = nombre;
 // llamo a la funcion que define la jugada de la pc
 function actualizarRonda() {
   resultadoRonda.style.color="red";
-  
   if (nroRonda===0) {
     ronda.innerHTML = "RONDA 1";
   } else { 
-    ronda.innerHTML = "RONDA " + (nroRonda);
+    ronda.innerHTML = "RONDA " + nroRonda;
+    // resultadoRonda.style.color = "black";
   }
 }
+
+
+
   botonPiedra.addEventListener("click", function () {
     eleccionPlayer = "piedra";
     console.log(eleccionPlayer)
+    
     juegaPc();
   })
 
   botonPapel.addEventListener("click", function () {
     eleccionPlayer = "papel";
     console.log(eleccionPlayer)
+   
     juegaPc();
   })
 
   botonTijera.addEventListener("click", function () {
     eleccionPlayer = "tijera";
     console.log(eleccionPlayer)
+ 
     juegaPc();
   })
-
-
 
 
 // creo funcion con la jugada de la Pc
@@ -95,7 +99,7 @@ function juegaPc() {
   let valores = { 0: 'piedra', 1: 'papel', 2: 'tijera' };
   eleccionPc = valores[Math.floor(Math.random() * 3)];
   console.log("pc" + eleccionPc);
-  imagenesJugada(eleccionPlayer, eleccionPc);
+  progresoJugada(eleccionPlayer, eleccionPc);
 }
  
 function imagenesJugada(ePlayer, ePc) {
@@ -129,7 +133,7 @@ function determinarGanador(ePlayer, ePc) {
   } else if (ePc == 'piedra' && ePlayer == 'tijera' || ePc == 'papel' && ePlayer == 'piedra' || ePc == 'tijera' && ePlayer == 'papel') {
     resultadoPerdiste();
   } else {
-    resultadoGanaste()
+    resultadoGanaste();
   }
   actualizarRonda();
 // determino ganador de partida y paso a resultado de partida
@@ -144,24 +148,23 @@ function determinarGanador(ePlayer, ePc) {
 function resultadoEmpate(){
   resultadoRonda.innerHTML = "Empate !!!";
   resultadoRonda.style.color = "red";
+  
 }
 
 function resultadoPerdiste(){
-  resultadoRonda.innerHTML = "Perdiste la ronda";
+  resultadoRonda.innerHTML = "Perdiste la ronda " + (nroRonda + 1);
   resultadoRonda.style.color = "red";
   puntosPc += 1;
   nroRonda += 1;
   marcadorPc.innerHTML = puntosPc;
-
 }
 
 function resultadoGanaste(){
-  resultadoRonda.innerHTML = "Ganaste la ronda";
+  resultadoRonda.innerHTML = "Ganaste la ronda " + (nroRonda +1);
   resultadoRonda.style.color = "red";
   puntosPlayer += 1;
   nroRonda += 1;
   marcadorPlayer.innerHTML = puntosPlayer;
-  
 }
 
 // defino las acciones segun el resultado de la partida
@@ -203,3 +206,35 @@ function reiniciar() {
 
 window.addEventListener("load", cargarNombre);
 botonReiniciar.addEventListener("click", reiniciar);
+
+
+
+// https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_progressbar_label_js
+var i = 0;
+function progresoJugada(ePlayer, ePc) {
+  if (i == 0) {
+    i = 1;
+    var elem = barraProgreso;
+    var width = 10;
+    var id = setInterval(frame, 10);
+    function frame() {
+      if (width >= 60) {
+        clearInterval(id);
+        i = 0;
+        imagenesJugada(ePlayer, ePc);
+      } else {
+        width++;
+        elem.style.width = width + "%";
+        elem.innerHTML = width  + "%";
+      }
+    }
+  }
+
+
+  // ronda.innerHTML = "LISTO PARA EMPEZAR !!!";
+  // resultadoRonda.innerHTML = "nueva partida";
+  // ataquePlayer.innerHTML = '<img class="jugada-player" src="/images/cerebro2.png">';
+  // ataquePc.innerHTML = '<img class="jugada-pc" src="/images/pc.jpg">';
+  // console.log("nueva ronda");
+  // actualizarRonda();
+}
