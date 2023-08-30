@@ -168,7 +168,7 @@ button:hover {
 }
 
  #btn-piedra {
-    background-image: url(piedra.png);
+    background-image: url(/images/piedra.png);
     height: 40px;
     width: 40px;
     background-size: contain;
@@ -177,7 +177,7 @@ button:hover {
 }
 
 #btn-papel {
-    background-image: url(papel.png);
+    background-image: url(/images/papel.png);
     height: 40px;
     width: 40px;
     background-size: contain;
@@ -186,7 +186,7 @@ button:hover {
 }
 
 #btn-tijera {
-    background-image: url(tijera.png);
+    background-image: url(images/tijera.png);
     height: 40px;
     width: 40px;
     background-size: contain;

@@ -104,20 +104,20 @@ function juegaPc() {
  
 function imagenesJugada(ePlayer, ePc) {
  if (ePlayer == "piedra") {
-  ataquePlayer.innerHTML = '<img class="jugada-player" src="piedra.png">';
+  ataquePlayer.innerHTML = '<img class="jugada-player" src="/images/piedra.png">';
  } else if (ePlayer == "papel") {
-  ataquePlayer.innerHTML = '<img class="jugada-player" src="papel.png">';
+  ataquePlayer.innerHTML = '<img class="jugada-player" src="/images/papel.png">';
  } else {
-  ataquePlayer.innerHTML = '<img class="jugada-player" src="tijera.png">';
+  ataquePlayer.innerHTML = '<img class="jugada-player" src="/images/tijera.png">';
  }
  console.log('imagenPlayer');
 
  if (ePc == "piedra") {
-  ataquePc.innerHTML = '<img class="jugada-pc" src="piedra.png">';
+  ataquePc.innerHTML = '<img class="jugada-pc" src="/images/piedra.png">';
  } else if (ePc == "papel") {
-  ataquePc.innerHTML = '<img class="jugada-pc" src="papel.png">';
+  ataquePc.innerHTML = '<img class="jugada-pc" src="/images/papel.png">';
  } else {
-  ataquePc.innerHTML = '<img class="jugada-pc" src="tijera.png">';
+  ataquePc.innerHTML = '<img class="jugada-pc" src="/images/tijera.png">';
  }
 determinarGanador(eleccionPlayer, eleccionPc);
 console.log('imagenPc');
@@ -197,8 +197,8 @@ function reiniciar() {
   resultadoRonda.style.color = "black";
   marcadorPlayer.innerHTML = "0";
   marcadorPc.innerHTML = "0";
-  ataquePlayer.innerHTML = '<img class="jugada-player" src="cerebro2.png">';
-  ataquePc.innerHTML = '<img class="jugada-pc" src="pc.jpg">';
+  ataquePlayer.innerHTML = '<img class="jugada-player" src="/images/cerebro2.png">';
+  ataquePc.innerHTML = '<img class="jugada-pc" src="/images/pc.jpg">';
   console.log("reinicio");
   actualizarRonda();
 }
