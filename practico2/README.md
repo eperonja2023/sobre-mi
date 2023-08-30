@@ -1,10 +1,39 @@
-# Título del Proyecto
+# PIEDRA-PAPEL-TIJERA
 
-_Acá va un párrafo que describa lo que es el proyecto_
+El conocido juego de Piedra-Papel-Tijera ejecutable desde navegadores de internet para jugar contra la PC
 
-## Comenzando 🚀
-
+## INFO PARA EL USUARIO 
+### Acceso al juego
+Con cualquier navegador acceder a https://eperonja2023.github.io/sobre-mi/practico2
+### Reglamento del juego
+Al ingresar a la página del juego será solicitado un nombre o alias para poder comenzar a jugar. Se deberá completar el campo para poder comenzar a jugar.
+El juego comienza cuando el jugador elige una de las 3 opciones (Piedra-Papel-Tijera) en la botonera inferior. Por cada elección que realice el jugador la PC hará su propia eleccion al azar. Luego ambas elecciones se verán en el área de juego.
+De cada ronda saldrá un ganador según las reglas de Piedra-Papel-Tijera:
+ * Piedra le gana a Tijera
+ * Tijera le gana a Papel
+ * Papel le gana a Piedra
+ * Empates: Si ambos jugadores eligen la misma opción (Piedra-Piedra, Papel-Papel, Tijera-tijera) se considerará empate y no sumarán puntos. SE DEBERÁ JUGAR NUEVAMENTE LA RONDA HASTA QUE HAYA UN GANADOR.
+El ganador de cada ronda sumará 1 punto que irá acumulando en su marcador.
+El ganador del juego será el que primero Llegue a ganar 3 rondas.
+Una vez terminado el juego el jugador tendrá la posibilidar de comenzar un nuevo juego oprimiendo el boton de *REINICIAR*.
+---
+## INFO PARA PROGRAMADORES
 _Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
+### Pre-requisitos
+Para acceder a los archivos del proyecto es recomendable tener instalado VS Code y Git Bash. 
+
+### Instalacion
+Para obtener una copia del proyecto en funcionamiento en la máquina local para propositos de desarrollo y pruebas:
+* Posicionarse en la carpeta donde desée descargar el proyecto
+* Abrir el programa Git Bash y ejecutar el siguiente comando para iniciar la descarga:
+ > git clone https://github.com/eperonja2023/sobre-mi.git
+ * Una vez descargado ingresar a la carpeta *practico2* para acceder al contenido del programa.
+
+### Para ejecutar el programa
+* Desde la máquina local abrir el archivo index.html descargado en la carpeta practico2.
+* Ó desde Internet usando cualquier navegador desde este enlace:  [Calculadora](https://eperonja2023.github.io/sobre-mi/practico2)
+___
+## Ejecutando las pruebas
 
 Mira **Deployment** para conocer como desplegar el proyecto.
 
